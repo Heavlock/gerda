@@ -1,0 +1,21 @@
+[Unit]
+Description=Gerda on-demand Russian F8 recognition
+
+[Service]
+Type=exec
+WorkingDirectory=@ROOT@
+ExecStart="@ROOT@/.venv/bin/python" -m assistant.russian_daemon
+Environment="PYTHONPATH=@ROOT@"
+Environment=PYTHONUNBUFFERED=1
+Environment=HF_HUB_OFFLINE=1
+Environment=HF_HUB_DISABLE_TELEMETRY=1
+Environment=GERDA_RUSSIAN_THREADS=2
+Environment=GERDA_RUSSIAN_IDLE_SECONDS=300
+Environment=OMP_NUM_THREADS=2
+Environment=OPENBLAS_NUM_THREADS=2
+Environment=MKL_NUM_THREADS=2
+UMask=0077
+NoNewPrivileges=true
+Restart=no
+TimeoutStopSec=15
+KillMode=control-group

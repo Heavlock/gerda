@@ -1,0 +1,16 @@
+.venv*/
+models/
+input/
+output/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.log
+*.wav
+*.mp3
+*.pt
+*.onnx
+*.safetensors
+.pytest_cache/
+docs/*-check.json

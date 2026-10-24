@@ -1,0 +1,21 @@
+[Unit]
+Description=Gerda English dictation and Emma voice for Herdr
+After=pipewire.service
+
+[Service]
+Type=simple
+WorkingDirectory=@ROOT@
+ExecStart="@ROOT@/.venv-english/bin/python" -m assistant.daemon
+Environment="PYTHONPATH=@ROOT@"
+Environment=PYTHONUNBUFFERED=1
+Environment=HF_HUB_OFFLINE=1
+Environment=HF_HUB_DISABLE_TELEMETRY=1
+UMask=0077
+NoNewPrivileges=true
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=15
+KillMode=control-group
+
+[Install]
+WantedBy=default.target

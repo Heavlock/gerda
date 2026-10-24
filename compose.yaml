@@ -1,0 +1,18 @@
+services:
+  gigaam:
+    build: .
+    image: gerda-gigaam:local
+    volumes:
+      - ./input:/data/input:ro
+      - ./output:/data/output
+      - ./models:/models:ro
+    environment:
+      INPUT_PATH: /data/input
+      OUTPUT_DIR: /data/output
+      GIGAAM_MODEL_DIR: /models/gigaam-v3-e2e-rnnt
+      GIGAAM_VAD_MODEL_DIR: /models/silero-vad
+      GIGAAM_VAD: ${GIGAAM_VAD:-auto}
+      GIGAAM_AUTO_VAD_SECONDS: ${GIGAAM_AUTO_VAD_SECONDS:-20}
+      GIGAAM_VAD_BATCH_SIZE: ${GIGAAM_VAD_BATCH_SIZE:-4}
+      GIGAAM_MAX_SPEECH_SECONDS: ${GIGAAM_MAX_SPEECH_SECONDS:-20}
+      GIGAAM_MIN_SILENCE_MILLISECONDS: ${GIGAAM_MIN_SILENCE_MILLISECONDS:-500}

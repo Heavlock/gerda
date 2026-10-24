@@ -1,0 +1,18 @@
+{
+  "voice": "en-Emma_woman.pt",
+  "voice_sha256": "75b15c481e0d848991f1789620aa9929c583ec2c5f701f8152362cf74498bbf8",
+  "model": "microsoft/VibeVoice-Realtime-0.5B",
+  "model_revision": "6bce5f06044837fe6d2c5d7a71a84f0416bd57e4",
+  "source_revision": "16fb2cb1217c9934a886e1948ffb06120caa2df5",
+  "tokenizer_revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "preferred_device": "cuda",
+  "cpu_threads": 8,
+  "cuda_host_threads": 2,
+  "interop_threads": 1,
+  "dtype": "float32",
+  "attention": "sdpa",
+  "ddpm_steps": 5,
+  "cfg_scale": 1.5,
+  "cuda_memory_fraction": 0.6666666666666666,
+  "model_weight_sha256": "7758b150b8139deb48ac1ff6f181f745c8fedd5511232fd974b3eb217d83b514"
+}
